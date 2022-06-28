@@ -21,7 +21,19 @@ A starter template containing some pretty neat stuff. A stack I've come to love 
 5. Basic Configs and Env Vars
 6. Working setup of Tailwind, Material UI
 7. Working setup of Yup & Formik
+8. Global Snackbar Notifications
+
+## Usage
+
+1. Run `npm run dev` to start dev server
+2. Run `npm run build` to build
+3. Run `npm run preview` to, you guessed it, preview.
 
 ## TODO
 
-1. Add state management library (Zustand preferred)
+1. Add State Management lib (Zustand preferred)
+2. Add Documentation lib
+
+### Pull Requests
+
+Pull requests are highly appreciated.

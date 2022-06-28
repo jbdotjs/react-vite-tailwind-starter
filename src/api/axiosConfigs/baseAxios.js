@@ -1,4 +1,5 @@
 import axios from "axios";
+import { FORBIDDEN_ERROR_MSG, NOTFOUND_ERROR_MSG } from "../apiVerbiage";
 // import { LoginRoute } from "../../configs/routes";
 
 const defaultOptions = {
@@ -24,10 +25,27 @@ baseAxiosInstance.interceptors.response.use(
         }
         return response;
     },
-    (error) => {
-        // Do something with response error
-        console.log(error);
-        return Promise.reject(error);
+    (err) => {
+        console.log(err);
+
+        if (err.response?.data?.Message) {
+            SnackbarUtils.error(err.response.data.Message);
+            return;
+        }
+        if (err.response?.status === 401) {
+            SnackbarUtils.error(FORBIDDEN_ERROR_MSG);
+            return err;
+        }
+        if (err.response?.status === 404) {
+            SnackbarUtils.error(NOTFOUND_ERROR_MSG);
+            return err;
+        }
+
+        SnackbarUtils.error(
+            err.message || "Something went wrong, please try again."
+        );
+        return err;
+        // Promise.reject(err);
     }
 );
 
