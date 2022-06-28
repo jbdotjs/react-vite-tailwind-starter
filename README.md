@@ -8,7 +8,7 @@ A starter template containing some pretty neat stuff. A stack I've come to love 
 2. Vite v2
 3. Tailwind CSS v3
 4. Material UI v5
-5. Axios, Yup, Formik, React Router
+5. Axios, Yup, Formik, React Router, React Query
 
 ## What's Included
 
